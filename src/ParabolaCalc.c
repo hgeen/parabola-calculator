@@ -77,7 +77,8 @@ int parabolaIntercepts()
     radicand = sqrtf((b * b) - (4 * a * c));
     if (radicand < 0)
     {
-        return 0;
+        // need to fix this, there is no printed output if the radicand is less than 0
+        printf("there are no x intercepts");
     }
     else if (radicand >= 0)
     {
@@ -95,12 +96,22 @@ int main()
 {
     int choice;
 
-    printf("do you need x-y intercepts, a table, or the vertex? 1 for intercepts, 2 for the table, 3 for the vertex\n");
+    printf("do you need x-y intercepts, a table, or the vertex? 1 for intercepts, 2 for the table of points, 3 for the vertex\n");
     scanf_s("%d", &choice);
     if (choice == 1)
     {
-        printf("you have chosen x-y intercepts");
+        printf("you have chosen x-y intercepts\n");
         parabolaIntercepts();
+    }
+    else if(choice == 2)
+    {
+        printf("you have chosen the table of points\n");
+        parabolaTable();
+    }
+    else if(choice == 3)
+    {
+        printf("you have chosen the vertex\n");
+        parabolaVertex();
     }
 
     return 0;
