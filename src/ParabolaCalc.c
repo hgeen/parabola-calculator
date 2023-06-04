@@ -77,11 +77,12 @@ int parabolaIntercepts()
     // y intercept is stated to be a quadratic expression
     // the radicand is the inside of the radical of the quadratic equation, which is the square root of b squared minus four times a times c or √(b² - 4ac)
     yIntercept = (a * 0) + (b * 0) + c;
-    radicand = sqrtf((b * b) - (4 * a * c));
+    radicand = (b * b) - (4 * a * c);
     if (radicand < 0)
     {
         // need to fix this, there is no printed output if the radicand is less than 0
-        printf("there are no x intercepts");
+        // fixed it, the radicand variable already had the square root function so nothing printed, but now something should
+        printf("there are no x intercepts\n");
     }
     else if (radicand >= 0)
     {
